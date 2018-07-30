@@ -10,6 +10,7 @@ window.onload = function(){
   var widthInBlocks = canvasWidth/blockSize;
   var heightInBlocks = canvasHeight/blockSize;
   var score;
+  var timeout;
 
   init();
 
@@ -48,7 +49,7 @@ window.onload = function(){
       drawScore();
       snakee.draw();
       applee.draw();
-      setTimeout(refreshCanvas,delay);
+      timeout = setTimeout(refreshCanvas,delay);
     }
   }
 
@@ -59,7 +60,7 @@ window.onload = function(){
     ctx.font = "bold 70px sans-serif";
     ctx.fillStyle = "#000";
     ctx.textAlign = "center";
-    ctx.textBaeline = "middle";
+    ctx.textBaseline = "middle";
     ctx.strokeStyle = "white";
     ctx.lineWidth = 5;
     var centreX = canvasWidth / 2;
@@ -77,6 +78,7 @@ window.onload = function(){
     snakee = new Snake([[6,4], [5,4], [4,4]], "right");
     applee = new Apple([10,10]);
     score = 0;
+    clearTimeout(timeout);
     refreshCanvas();
   }
 
@@ -86,7 +88,7 @@ window.onload = function(){
     ctx.save();
     ctx.font = "bold 20px sans-serif";
     ctx.fillStyle = "#3d3d3d";
-    ctx.textAlign = "center";
+    ctx.textAlign = "left";
     ctx.fillText(score.toString(), 5, canvasHeight - 5);
     ctx.restore();
   }
