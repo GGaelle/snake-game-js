@@ -107,7 +107,7 @@ window.onload = function(){
     this.ateApple = false;
     this.draw = function(){
       ctx.save();
-      ctx.fillStyle = "#ff0000";
+      ctx.fillStyle = "#276b1f";
       for(var i = 0; i < this.body.length; i++){
         drawBlock(ctx, this.body[i]);
       }
@@ -205,7 +205,7 @@ window.onload = function(){
     this.position = position;
     this.draw = function(){
       ctx.save();
-      ctx.fillStyle = "#33cc33";
+      ctx.fillStyle = "#f14242";
       ctx.beginPath();
       var radius = blockSize/2;
       var x = this.position[0] * blockSize + radius;
